@@ -1,0 +1,15 @@
+name: magellan
+services:
+  - name: backend
+    type: web
+    env: node
+    build:
+      commands:
+        - npm install --production
+    run:
+      command: node server.js
+    ports:
+      - 3000
+    env_vars:
+      - key: PORT
+        value: "3000"
